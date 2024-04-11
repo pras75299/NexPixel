@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import Imagecard from "@/lib/components/Imagecard";
 import Imagesearch from "@/lib/components/Imagesearch";
+
+import Navbar from "@/lib/components/navbar";
 interface Image {
   id: number;
   userImageURL: string;
@@ -43,10 +45,9 @@ export default function Home() {
   };
   return (
     <>
-      <header className="bg-blue-700 text-white text-center py-3">
-        <h1 className="text-xl font-bold">NexPixel Image Finder</h1>
-      </header>
-      <div className="container mx-auto">
+      <Navbar />
+
+      <div className="container mx-auto pt-9">
         <Imagesearch searchText={handleSearch} />
 
         {!isLoading && images.length === 0 && (

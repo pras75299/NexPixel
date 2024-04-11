@@ -1,4 +1,5 @@
 import React from "react";
+import { FaDownload } from "react-icons/fa";
 import {
   Card,
   CardContent,
@@ -7,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 interface Image {
   id: number;
   userImageURL: string;
@@ -26,7 +28,6 @@ interface ImageCardProps {
 
 const Imagecard: React.FC<ImageCardProps> = ({ image }) => {
   const tags = image.tags.split(",");
-
   return (
     <>
       <Card>
@@ -56,7 +57,7 @@ const Imagecard: React.FC<ImageCardProps> = ({ image }) => {
             </span>
           </CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="group ">
           <a
             href={image?.largeImageURL || image.webformatURL}
             target="_blank"
