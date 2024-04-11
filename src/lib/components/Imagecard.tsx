@@ -9,7 +9,9 @@ import {
 } from "@/components/ui/card";
 interface Image {
   id: number;
+  userImageURL: string;
   webformatURL: string;
+  largeImageURL: string;
   tags: string;
   user: string;
   views: number;
@@ -29,7 +31,16 @@ const Imagecard: React.FC<ImageCardProps> = ({ image }) => {
     <>
       <Card>
         <CardHeader>
-          <CardTitle>Photo by {image.user}</CardTitle>
+          <CardTitle>
+            Photo by {image.user} <br />
+            <span className="flex items-center justify-start">
+              <img
+                src={image?.userImageURL || "null"}
+                alt={`image by ${image?.user || "no user"}`}
+                className="w-10 h-10 ml-2 rounded-full"
+              />
+            </span>
+          </CardTitle>
           <CardDescription>
             <span>
               <strong className="text-blue-800">Views: </strong>
@@ -46,7 +57,11 @@ const Imagecard: React.FC<ImageCardProps> = ({ image }) => {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <a href={image.webformatURL} target="_blank" rel="noreferrer">
+          <a
+            href={image?.largeImageURL || image.webformatURL}
+            target="_blank"
+            rel="noreferrer"
+          >
             <img
               src={image.webformatURL}
               alt=""
@@ -59,7 +74,7 @@ const Imagecard: React.FC<ImageCardProps> = ({ image }) => {
             {tags.map((tag, index) => (
               <span
                 key={index}
-                className="inline-block bg-blue-300 rounded-full px-3 py-1 text-sm font-semibold text-blue-900 mr-2 mb-2"
+                className="inline-block bg-blue-200 rounded-full px-2 py-1 text-sm font-normal text-blue-900 mr-2 mb-2"
               >
                 #{tag}
               </span>
