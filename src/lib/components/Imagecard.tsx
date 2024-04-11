@@ -58,6 +58,11 @@ const Imagecard: React.FC<ImageCardProps> = ({ image }) => {
           </CardDescription>
         </CardHeader>
         <CardContent className="group ">
+          {/* <span className="absolute top-3 right-5 cursor-pointer z-10 opacity-0 group-hover:opacity-100">
+            <a href={`${image?.largeImageURL}`} download>
+              <FaDownload className="dark:text-white text-blue-500" />
+            </a>
+          </span> */}
           <a
             href={image?.largeImageURL || image.webformatURL}
             target="_blank"

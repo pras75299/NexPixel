@@ -59,7 +59,7 @@ export default function Home() {
         {isLoading ? (
           <h1 className="text-6xl text-center mx-auto mt-32">Loading...</h1>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-4">
             {images.map((image) => (
               <Imagecard key={image.id} image={image} />
             ))}
