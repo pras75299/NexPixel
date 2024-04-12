@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import Imagecard from "@/lib/components/Imagecard";
 import Imagesearch from "@/lib/components/Imagesearch";
 
-import Navbar from "@/lib/components/navbar";
 interface Image {
   id: number;
   userImageURL: string;
@@ -45,8 +44,6 @@ export default function Home() {
   };
   return (
     <>
-      <Navbar />
-
       <div className="container mx-auto pt-9">
         <Imagesearch searchText={handleSearch} />
 
