@@ -1,5 +1,4 @@
 "use client";
-import Imagecard from "@/lib/components/Imagecard";
 import Imagesearch from "@/lib/components/Imagesearch";
 import { useEffect, useState } from "react";
 import {

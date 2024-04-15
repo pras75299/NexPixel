@@ -11,9 +11,13 @@ export default function Navbar() {
           </span>
         </a>
         <div className="flex justify-between items-center ml-auto">
+          <Link href="/" className="mr-2">
+            Images
+          </Link>
           <Link href="/videos" className="mr-2">
             Videos
           </Link>
+
           <ModeToggle />
         </div>
       </div>
