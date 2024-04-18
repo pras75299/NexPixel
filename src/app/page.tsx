@@ -3,24 +3,7 @@ import React, { useState, useEffect } from "react";
 import Imagecard from "@/lib/components/Imagecard";
 import Imagesearch from "@/lib/components/Imagesearch";
 
-interface Image {
-  id: number;
-  userImageURL: string;
-  webformatURL: string;
-  largeImageURL: string;
-  tags: string;
-  user: string;
-  views: number;
-  downloads: number;
-  likes: number;
-  image: any;
-  // Define other properties of the image here
-}
-
-interface PixabayResponse {
-  hits: Image[];
-  // Define other properties of the Pixabay response if needed
-}
+import { Image, PixabayResponse } from "./types";
 
 export default function Home() {
   const [images, setImages] = useState<Image[]>([]);

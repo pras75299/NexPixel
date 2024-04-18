@@ -9,42 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-interface VideoAPIResponse {
-  total: number;
-  totalHits: number;
-  hits: VideoHit[];
-}
-
-interface VideoHit {
-  id: number;
-  pageURL: string;
-  type: string;
-  tags: string;
-  duration: number;
-  videos: VideoSizes;
-  views: number;
-  downloads: number;
-  likes: number;
-  comments: number;
-  user_id: number;
-  user: string;
-  userImageURL: string;
-}
-
-interface VideoSizes {
-  large: VideoDetails;
-  medium: VideoDetails;
-  small: VideoDetails;
-  tiny: VideoDetails;
-}
-
-interface VideoDetails {
-  url: string;
-  width: number;
-  height: number;
-  size: number;
-  thumbnail: string;
-}
+import { VideoAPIResponse, VideoHit, VideoSizes, VideoDetails } from "../types";
 
 export default function VideoPage() {
   const [videos, setVideos] = useState<VideoHit[]>([]);
